@@ -53,24 +53,25 @@ def main():
 
 	for i in range(1126):
 		error.append(pocket(x,y,x_test,y_test))
-		
+
 		hashes = '#' * int(i/1126 * 20)
 		spaces = ' ' * (20 - len(hashes))
 		sys.stdout.write("\r[%s] %f%%  %f"%(hashes + spaces,i/1126*100, error[i]))
 		sys.stdout.flush()
-		
+
 		#print(error[i])
-		
+
 	print()
 	print(sum(error)/1126)
 
 	plt.hist(error, bins='auto')
-	plt.xlabel('error rate')  
+	plt.xlabel('error rate')
 	plt.ylabel('frequency')
-	plt.title('PLA with 100 updates') 
+	plt.title('PLA with 100 updates')
 	plt.axvline(sum(error)/1126, color='b', linestyle='dashed', linewidth=2, label='mean='+str(sum(error)/1126))
 	plt.legend(loc='upper right')
 	plt.savefig('./pla100.png')
+    plt.show()
 
 if __name__ == '__main__':
 	main()

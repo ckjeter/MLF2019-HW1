@@ -25,7 +25,7 @@ def pla(x,y):
 				t += 1
 				w += x[n]*y[n]
 				flag = 1
-				
+
 	return t
 
 
@@ -46,8 +46,8 @@ def main():
 	print(sum(t)/1126)
 
 	plt.hist(t, bins='auto')
-	plt.xlabel('number of updates')  
-	plt.ylabel('frequency') 
+	plt.xlabel('number of updates')
+	plt.ylabel('frequency')
 	plt.title('normal PLA')
 	plt.axvline(sum(t)/1126, color='b', linestyle='dashed', linewidth=2, label='mean='+str(sum(t)/1126))
 	plt.legend(loc='upper right')
